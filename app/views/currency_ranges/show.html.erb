@@ -1,0 +1,29 @@
+<table class="list">
+	<thead>
+		<tr>
+			<th><%=l(:"currency.label_currency")%></th>
+			<th><%=l(:"currency.label_start_date")%></th>
+			<th><%=l(:"currency.label_due_date")%></td>
+			<th><%=l(:"currency.label_value")%></th>
+			<th></th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @ranges.each do |range| %>
+			<%= render :partial => 'edit', locals: {range: range} %>
+		<% end %>
+	</tbody>
+</table>
+
+<%= form_for :currency_range, url: {action: "add"} do |f| %>
+	<%= f.label :currency, l(:"currency.label_currency") %>
+	<%= f.text_field :currency, :size => 3 %>
+	<%= f.label :start_date, l(:"currency.label_start_date") %>
+	<%= f.text_field :start_date, :size => 7 %>
+	<%= f.label :due_date, l(:"currency.label_due_date") %>
+	<%= f.text_field :due_date, :size => 7 %>
+	<%= f.submit l(:"button_add") %>
+	<%= calendar_for('currency_range_start_date') %>
+	<%= calendar_for('currency_range_due_date') %>
+<% end %>

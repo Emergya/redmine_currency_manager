@@ -1,0 +1,12 @@
+# English strings go here for Rails i18n
+es:
+  #field_currency: Currency
+  #field_start_date: Start date
+  #field_due_date: Due date
+  #field_value: Conversion
+
+  currency:
+    label_currency: Currency
+    label_start_date: Start date
+    label_due_date: Due date
+    label_value: Conversion

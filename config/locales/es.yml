@@ -1,0 +1,12 @@
+# Spanish strings go here for Rails i18n
+es:
+  #field_currency: Tipo de moneda
+  #field_start_date: Fecha de inicio
+  #field_due_date: Fecha de fin
+  #field_value: Factor de conversión
+
+  currency:
+    label_currency: Tipo de moneda
+    label_start_date: Fecha de inicio
+    label_due_date: Fecha de fin
+    label_value: Factor de conversión

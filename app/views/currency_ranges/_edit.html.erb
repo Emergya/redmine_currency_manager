@@ -1,0 +1,13 @@
+<tr>
+	<%= form_for range, url: {action: "update"} do |f| %>
+		<%= f.hidden_field :id %>
+		<td><%= range[:currency] %></td>
+		<td><%= f.text_field :start_date, :size => 7, :value => range.start_date.strftime('%Y-%m-%d'), :id => "currency_range_start_date_"+(range.id).to_s %></td>
+		<td><%= f.text_field :due_date, :size => 7, :value => range.due_date.strftime('%Y-%m-%d'), :id => "currency_range_due_date_"+(range.id).to_s %></td>
+		<td><%= f.text_field :value, :readonly => true, :size => 5 %></td>
+		<td><%= f.submit l(:"button_update") %></td>
+		<td><%= link_to l(:"button_delete"), {:action => 'delete/'+range.id.to_s}, :confirm => 'Are you sure?' %></td>
+		<%= calendar_for('currency_range_start_date_'+(range.id).to_s) %>
+		<%= calendar_for('currency_range_due_date_'+(range.id).to_s) %>
+	<% end %>
+</tr>

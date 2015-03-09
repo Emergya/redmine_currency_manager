@@ -1,0 +1,11 @@
+= Currency Manager
+
+Currency Manager es un plugin de Redmine desarrollado especificamente para Emergya.
+
+Este plugin permite registrar periodos de facturación para diferentes tipos de moneda, obteniendo su factor de cambio a partir del sistema SAP.
+
+== Requisitos
+
+Para que el plugin funcione correctamente, es necesario registrar la BBDD de SAP en databases.yml e indicar los campos que se solicitan en la configuración del plugin.
+
+Este plugin únicamente permite gestionar y obtener la información de los periodos de facturación y de los diferentes factores de cambio de divisas. Para explotar esta información es necesario tener instalado y configurado correctamente el plugin "Emergya Adjustments".
