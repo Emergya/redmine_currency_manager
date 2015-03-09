@@ -9,6 +9,5 @@ Redmine::Plugin.register :redmine_currency_manager do
   settings :default => {}, :partial => 'settings/currency_settings'
   menu  :admin_menu, :cc, { :controller => 'currency_ranges', :action => 'show'},
   		:html => { :class => 'issue_statuses' }, 
-  		:caption => 'Currency'
-  		#, :if => Proc.new { User.current.allowed_to?(:currency_manager, nil, :global => true) }
+  		:caption => :"currency.label_currency_ranges"
 end

@@ -15,10 +15,10 @@
 		<% end %>
 	</tbody>
 </table>
-
+<br>
 <%= form_for :currency_range, url: {action: "add"} do |f| %>
 	<%= f.label :currency, l(:"currency.label_currency") %>
-	<%= f.text_field :currency, :size => 3 %>
+	<%= f.select :currency,  options_for_select(@currency_options), :include_blank => false %>
 	<%= f.label :start_date, l(:"currency.label_start_date") %>
 	<%= f.text_field :start_date, :size => 7 %>
 	<%= f.label :due_date, l(:"currency.label_due_date") %>

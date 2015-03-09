@@ -1,12 +1,29 @@
 # English strings go here for Rails i18n
-es:
-  #field_currency: Currency
-  #field_start_date: Start date
-  #field_due_date: Due date
-  #field_value: Conversion
+en:
+  field_currency: Currency
+  field_start_date: Start date
+  field_due_date: Due date
+  field_value: Conversion
 
   currency:
+    label_currency_ranges: Currency ranges
+
     label_currency: Currency
     label_start_date: Start date
     label_due_date: Due date
     label_value: Conversion
+
+    label_sap_currency_exchange: SAP Currency Exchange
+    label_table: Table
+    label_currency_field: Currency Field
+    label_rate_field: Rate Field
+    label_date_field: Date Field
+
+    text_no_values_found_sap: No values found in SAP
+    text_range_create_success: The range has been created successfully
+    text_range_update_success: The range has been updated successfully
+    text_range_delete_success: The range has been deleted successfully
+  activerecord:
+    errors:
+      messages:
+       range_overlap: Intervals can not overlap

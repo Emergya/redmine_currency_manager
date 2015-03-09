@@ -1,22 +1,31 @@
 <!--<fieldset>
 	<div class="splitcontentleft">-->
 		<fieldset>
-		<legend>Divisas en SAP</legend>
+		<legend><%=l(:"currency.label_sap_currency_exchange")%></legend>
 			<p>
-				<label>Tabla</label>
+				<label><%=l(:"currency.label_table")%></label>
 				<%= text_field_tag 'settings[sap_table_name]', @settings['sap_table_name'] %>
 			</p>
 			<p>
-				<label>Campo moneda</label>
+				<label><%=l(:"currency.label_currency_field")%></label>
 				<%= text_field_tag 'settings[sap_currency_field]', @settings['sap_currency_field'] %>
 			</p>
 			<p>
-				<label>Campo factor de conversión</label>
+				<label><%=l(:"currency.label_rate_field")%></label>
 				<%= text_field_tag 'settings[sap_value_field]', @settings['sap_value_field'] %>
 			</p>
 			<p>
-				<label>Campo fecha</label>
+				<label><%=l(:"currency.label_date_field")%></label>
 				<%= text_field_tag 'settings[sap_date_field]', @settings['sap_date_field'] %>
+			</p>
+		</fieldset>
+		<fieldset>
+			<legend><%=l(:label_custom_field_plural)%></legend>
+			<p>
+					<label><%=l(:"currency.label_currency")%></label>
+      				<%= select_tag 'settings[currency_custom_field]',
+      					('<option></option>' +
+        				options_from_collection_for_select(CustomField.all, :id, :name, @settings['currency_custom_field'].to_i)).html_safe %>
 			</p>
 		</fieldset>
 	<!--</div>

@@ -2,7 +2,7 @@ class CurrencyRange < ActiveRecord::Base
 	validate :avoid_overlapping
 
 	def avoid_overlapping
-		errors.add(:base, "Los intervalos no pueden solaparse") if CurrencyRange.find(:first, :conditions => ["id != ? AND currency = ? AND start_date <= ? AND due_date >= ?", self[:id] || 0, self[:currency], self[:due_date], self[:start_date]]) != nil
+		errors.add(:base, l(:"activerecord.errors.messages.range_overlap")) if CurrencyRange.find(:first, :conditions => ["id != ? AND currency = ? AND start_date <= ? AND due_date >= ?", self[:id] || 0, self[:currency], self[:due_date], self[:start_date]]) != nil
 	end
 
 	def get_error_message
@@ -29,13 +29,6 @@ class CurrencyRange < ActiveRecord::Base
 			self.create({currency: currency, value: value})
 		end
 	end
-=begin
-	def self.set_range_value(currency, date, value)
-		row = self.find(:first, :conditions => ["currency = ? AND due_date <= ?", currency, date], :order => "due_date DESC")
-
-		row.update_attributes({value: value}) if row.present?
-	end
-=end
 
 	# Devuelve un array con los tipos de moneda registrados
 	def self.get_currencies

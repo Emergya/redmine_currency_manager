@@ -1,12 +1,24 @@
 # Spanish strings go here for Rails i18n
 es:
-  #field_currency: Tipo de moneda
-  #field_start_date: Fecha de inicio
-  #field_due_date: Fecha de fin
-  #field_value: Factor de conversión
-
   currency:
+    label_currency_ranges: Periodos de cierre
+
     label_currency: Tipo de moneda
     label_start_date: Fecha de inicio
     label_due_date: Fecha de fin
     label_value: Factor de conversión
+
+    label_sap_currency_exchange: Divisas en SAP
+    label_table: Tabla
+    label_currency_field: Campo tipo de moneda
+    label_rate_field: Campo factor de conversión
+    label_date_field: Campo fecha
+
+    text_no_values_found_sap: No se han encontrado valores en SAP
+    text_range_create_success: El intervalo se ha creado correctamente
+    text_range_update_success: El intervalo se ha actualizado correctamente
+    text_range_delete_success: El intervalo se ha borrado correctamente
+  activerecord:
+    errors:
+      messages:
+       range_overlap: Los intervalos no pueden solaparse
