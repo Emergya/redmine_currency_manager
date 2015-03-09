@@ -14,9 +14,10 @@ class SapConnection < ActiveRecord::Base
 			sap_value_field = Setting.plugin_redmine_currency_manager['sap_value_field']
 			sap_date_field = Setting.plugin_redmine_currency_manager['sap_date_field']
 
-			query = "SELECT "+sap_value_field+" FROM "+sap_table_name+" WHERE "+sap_currency_field+" = '"+currency+"' AND "+sap_date_field+" <= '"+date.to_date.beginning_of_day.to_s+"' ORDER BY "+sap_date_field+" DESC LIMIT 1"
+			#query = "SELECT "+sap_value_field+" FROM "+sap_table_name+" WHERE "+sap_currency_field+" = '"+currency+"' AND "+sap_date_field+" <= '"+date.to_date.to_s+"' ORDER BY "+sap_date_field+" DESC LIMIT 1"
+			query = "SELECT "+sap_value_field+" FROM "+sap_table_name+" WHERE "+sap_currency_field+" = '"+currency+"' AND "+sap_date_field+" <= '"+date.to_date.to_s+"' ORDER BY "+sap_date_field+" DESC"
 
-			resp = connection.select_all(query);
+			resp = connection.select_all(query)
 
 			if resp.blank?
 				return nil

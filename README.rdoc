@@ -6,6 +6,14 @@ Este plugin permite registrar periodos de facturación para diferentes tipos de 
 
 == Requisitos
 
-Para que el plugin funcione correctamente, es necesario registrar la BBDD de SAP en databases.yml e indicar los campos que se solicitan en la configuración del plugin.
+Para que el plugin funcione correctamente, es necesario instalar la librería freeTDS:
+	sudo apt-get install freetds-dev
+
+E instalar las gemas del plugin:
+	bundle install
+
+A continuación, será necesario registrar la BBDD de SAP en databases.yml y rellenar, con la información de esta, los campos que se solicitan en la configuración del plugin.
+
+== Importante
 
 Este plugin únicamente permite gestionar y obtener la información de los periodos de facturación y de los diferentes factores de cambio de divisas. Para explotar esta información es necesario tener instalado y configurado correctamente el plugin "Emergya Adjustments".
