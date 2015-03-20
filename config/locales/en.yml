@@ -12,6 +12,7 @@ en:
     label_start_date: Start date
     label_due_date: Due date
     label_value: Conversion
+    label_current_value: Current conversion
 
     label_sap_currency_exchange: SAP Currency Exchange
     label_table: Table

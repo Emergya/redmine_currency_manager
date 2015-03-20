@@ -7,6 +7,7 @@ es:
     label_start_date: Fecha de inicio
     label_due_date: Fecha de fin
     label_value: Factor de conversión
+    label_current_value: Factor de conversión actual
 
     label_sap_currency_exchange: Divisas en SAP
     label_table: Tabla

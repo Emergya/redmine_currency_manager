@@ -27,3 +27,21 @@
 	<%= calendar_for('currency_range_start_date') %>
 	<%= calendar_for('currency_range_due_date') %>
 <% end %>
+<br>
+<br>
+<table class="list">
+	<thead>
+		<tr>
+			<th><%=l(:"currency.label_currency")%></th>
+			<th><%=l(:"currency.label_current_value")%></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @current_values.each do |current_value| %>
+			<tr>
+				<td><%= current_value[:currency] %></td>
+				<td><%= current_value[:value] %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
