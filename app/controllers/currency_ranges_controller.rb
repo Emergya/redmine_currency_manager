@@ -7,7 +7,7 @@ class CurrencyRangesController < ApplicationController
   def show
   	@ranges = CurrencyRange.get_ranges #find(:all, :conditions => ["start_date IS NOT NULL AND due_date IS NOT NULL"])
     @current_values = CurrencyRange.find(:all, :conditions => ["start_date IS NULL AND due_date IS NULL"])
-logger.info @current_values.inspect
+
     if Setting.plugin_redmine_currency_manager['currency_custom_field'].present?
       @currency_options = CustomField.find(Setting.plugin_redmine_currency_manager['currency_custom_field']).possible_values
     else

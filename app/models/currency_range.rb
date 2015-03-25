@@ -54,6 +54,6 @@ class CurrencyRange < ActiveRecord::Base
 
 	# Devuelve el rango efectivo para una determinada fecha del tipo de moneda indicado
 	def self.get_range(currency, date)
-		self.find(:first, :conditions => ["currency = ? AND start_date <= ?", currency, date.to_date.beginning_of_day], :order => "due_date DESC")
+		self.find(:first, :conditions => ["currency = ? AND start_date <= ? AND due_date >= ?", currency, date.to_date.beginning_of_day, date.to_date.beginning_of_day], :order => "due_date DESC")
 	end
 end
